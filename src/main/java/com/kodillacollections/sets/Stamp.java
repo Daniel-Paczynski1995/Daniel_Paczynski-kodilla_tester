@@ -4,27 +4,24 @@ import java.util.Objects;
 
 public class Stamp {
     private String name;
-    private String information;
+    private boolean isStamped;
     private int size;
 
-    public Stamp(String name, String information, int size) {
+    public Stamp(String name,  boolean isStamped, int size) {
         this.name = name;
-        this.information = information;
+        this.isStamped = true;
         this.size = size;
 
 
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getInformation() {
-        return information;
-    }
-
-    public int getSize() {
-        return size;
+    @Override
+    public String toString() {
+        return "Stamp{" +
+                "name='" + name + '\'' +
+                ", isStamped=" + isStamped +
+                ", size=" + size +
+                '}';
     }
 
     @Override
@@ -32,13 +29,25 @@ public class Stamp {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Stamp stamp = (Stamp) o;
-        return size == stamp.size &&
-                Objects.equals(name, stamp.name) &&
-                Objects.equals(information, stamp.information);
+        return isStamped == stamp.isStamped &&
+                size == stamp.size &&
+                Objects.equals(name, stamp.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, information, size);
+        return Objects.hash(name, isStamped, size);
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public boolean isStamped() {
+        return isStamped;
+    }
+
+    public String getName() {
+        return name;
     }
 }

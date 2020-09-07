@@ -2,9 +2,9 @@ package com.kodilla.collections.interfaces;
 
 public class CarRace {
     public static void main(String[] args) {
-        Ford ford = new Ford();
+        Ford ford = new Ford(10);
         showCarDetails(ford);
-        Opel opel = new Opel();
+        Opel opel = new Opel(100);
         showCarDetails(opel);
     }
 
