@@ -1,8 +1,8 @@
 public class UserDto {
 
-                String name;
-                double age;
-                double height;
+               private String name;
+               private double age;
+               private double height;
 
         public UserDto(String name, double age, double height){
                 this.name = name;
